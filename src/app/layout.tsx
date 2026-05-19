@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Barlow  } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "./style/ThemeProvider";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -9,7 +10,7 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: "Core Pulse",
-  description: "The digital heartbeat of patient recovery. Seamless care coordination for modern healthcare teams.",
+  description: "The digital heartbeat of patient recovery.",
 };
 
 export default function RootLayout({
@@ -18,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={barlow.className}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={barlow.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
