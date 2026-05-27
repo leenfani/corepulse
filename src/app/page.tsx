@@ -1,4 +1,4 @@
-import { Typography, Box, Stack, Grid } from "@mui/material";
+import { Typography, Box, Stack, Grid, Button } from "@mui/material";
 import Image from "next/image";
 
 export default function Home() {
@@ -89,7 +89,7 @@ export default function Home() {
                 sx={{
                   fontWeight: "bold",
                   color: "text.secondary",
-                  fontSize: { xs: "1.7rem", md: "2.2rem", lg: "2.5rem" },
+                  fontSize: { xs: "1.6rem", md: "2.2rem", lg: "2.5rem" },
                 }}
               >
                 Connect Nurses and Patients for
@@ -106,12 +106,36 @@ export default function Home() {
 
               <Typography
                 sx={{
-                  fontSize: { xs: "1rem", md: "1.3rem" },
+                  fontSize: { xs: "0.9rem", md: "1.3rem" },
                 }}
               >
                 Track health progress, monitor care plans, and keep nurses and
                 patients perfectly in sync—every second of the journey.
               </Typography>
+              <Stack
+                spacing={2}
+                direction={{ xs: "column", sm: "row" }}
+                sx={{ mt: 2 }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "1rem" },
+                    px: { xs: "10px", md: "30px" },
+                  }}
+                >
+                  monitor your status
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "1rem" },
+                    px: { xs: "10px", md: "30px" },
+                  }}
+                >
+                  monitor your patients
+                </Button>
+              </Stack>
             </Grid>
           </Grid>
         </Box>
