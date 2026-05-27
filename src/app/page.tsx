@@ -88,7 +88,7 @@ export default function Home() {
               <Typography
                 sx={{
                   fontWeight: "bold",
-                  color: "#053a85",
+                  color: "text.secondary",
                   fontSize: { xs: "1.7rem", md: "2.2rem", lg: "2.5rem" },
                 }}
               >
@@ -106,7 +106,6 @@ export default function Home() {
 
               <Typography
                 sx={{
-                  color: "#41474e",
                   fontSize: { xs: "1rem", md: "1.3rem" },
                 }}
               >
