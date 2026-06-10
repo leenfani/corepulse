@@ -7,6 +7,7 @@ import HHero from "./home/HHero";
 import ProblemSection from "./home/ProblemSection";
 import ScrollReveal from "./UI/ScrollReveal";
 import RoleSection from "./home/RoleSection";
+import HFooter from "./home/HFooter";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           <RoleSection {...RoleData} />
         </ScrollReveal>
       ))}
+      <HFooter/>
     </Box>
   );
 }
