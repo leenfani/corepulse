@@ -13,6 +13,12 @@ const theme = createTheme({
       secondary: "#053a85",
     },
   },
+  typography: {
+    fontFamily: "Barlow",
+    h1: {
+      fontFamily: "var(--kalam)",
+    },
+  },
 });
 
 export default theme;
