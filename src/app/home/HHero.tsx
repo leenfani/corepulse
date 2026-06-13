@@ -1,5 +1,6 @@
 import { Typography, Box, Stack, Grid, Button } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HHero() {
   return (
@@ -89,15 +90,17 @@ export default function HHero() {
               direction={{ xs: "column", sm: "row" }}
               sx={{ mt: 2 }}
             >
-              <Button
-                variant="contained"
-                sx={{
-                  fontSize: { xs: "0.75rem", md: "1rem" },
-                  px: { xs: "10px", md: "30px" },
-                }}
-              >
-                monitor your status
-              </Button>
+              <Link href="/auth">
+                <Button
+                  variant="contained"
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "1rem" },
+                    px: { xs: "10px", md: "30px" },
+                  }}
+                >
+                  monitor your status
+                </Button>
+              </Link>
               <Button
                 variant="outlined"
                 sx={{

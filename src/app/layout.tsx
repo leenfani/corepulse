@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Barlow } from "next/font/google";
+import { Barlow, Kalam } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "./style/ThemeProvider";
 
 const barlow = Barlow({
   subsets: ["latin"],
   weight: ["500", "700"],
+});
+
+const kalam = Kalam({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--kalam",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={kalam.variable} suppressHydrationWarning>
       <body className={barlow.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
