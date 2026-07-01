@@ -27,6 +27,7 @@ enum Department {
 
 model User {
   id          String  @id @default(cuid())
+  medicalId   Int @unique @map("medical_id")
   name        String
   age         Int
   role        Role
