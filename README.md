@@ -1,62 +1,62 @@
 
 # CorePulse
-An enterprise Healthcare Management SaaS
-Built with Next.js, TypeScript, and Material UI (MUI).
 
-## Project Status: In Development
-Current Focus: Establishing Core Architecture and Role-Based Layouts.
+An enterprise Healthcare Management SaaS built with Next.js, TypeScript, and Material UI (MUI).
+
+**Project Status:** In Development
+**Current Focus:** Authentication & Authorization Layer
 
 CorePulse is a specialized SaaS platform designed to bridge the gap between clinical nursing oversight and patient recovery. By providing distinct interfaces for Healthcare Providers (Nurses) and Patients, the system ensures real-time compliance tracking and personalized recovery guidance.
 
 ## The Vision
+
 The goal of this project is to demonstrate a production-ready frontend for the HealthTech sector. Key technical focuses include:
 
-Architecture: Scalable folder structure using the /src directory and Route Groups for role separation.
-
-Type Safety: Strict TypeScript interfaces for medical data entities (Medications, Diagnosis, User Roles).
-
-Performance: Leveraging modern framework features for automatic rendering optimization.
-
-UI Consistency: A unified design system built exclusively with MUI for a professional, medical-grade user experience.
-
+- **Architecture:** Scalable folder structure using the `/src` directory and Route Groups for role separation.
+- **Type Safety:** Strict TypeScript interfaces for medical data entities (Medications, Diagnosis, User Roles).
+- **Performance:** Leveraging modern framework features for automatic rendering optimization.
+- **UI Consistency:** A unified design system built exclusively with MUI for a professional, medical-grade user experience.
 
 ## Development Roadmap
-Phase 1: Foundation (Current)
-Clean Framework Initialization with Strict TypeScript.
 
-MUI Theme Registry and Custom Medical Branding Setup.
+### Phase 1: Foundation — Completed
+- Clean framework initialization with strict TypeScript.
+- MUI theme registry and custom medical branding setup.
+- Complete layout and responsive design for the Home Page.
+- Reusable UI components (e.g. `RoleSection`) extracted, with data separated from presentation.
 
-Complete the full layout and responsive design for the Home Page.
+### Phase 2: Authentication, Authorization & Data Layer — In Progress
+- Auth.js v5 (NextAuth) integrated for authentication.
+- Prisma + PostgreSQL data layer set up, with `User` model and `Role`, `Gender`, `Department` enums defined.
+- TypeScript interfaces (`User`, `AuthStatus`, `AuthState`) designed with a discriminated union pattern.
+- Auth state managed via custom reducer + Context/hook pattern.
+- Role-Based Access Control (RBAC) logic — up next.
+- Extending schema with a `Medication` model, relating Nurses (prescribers) to Patients (recipients) for care plan tracking.
 
-Refactor the codebase and extract reusable UI components.
+### Phase 3: Clinical Dashboard (Nurse View) — Planned
+- Patient Monitoring DataGrid for oversight.
+- Ability for nurses to assign/manage medication for individual patients.
 
-Phase 2: Authentication and State Logic
-Implementation of Role-Based Access Control (RBAC) Logic.
+### Phase 4: Recovery Dashboard (Patient View) — Planned
+- Daily medication and task checklist, reflecting medications assigned by their nurse.
+- Conditional UI rendering based on specific diagnosis and care plans.
 
-Redux Toolkit Store configuration for Patient/Nurse session management.
+## Tech Stack
 
-Phase 3: Clinical Dashboard (Nurse View)
-Patient Monitoring DataGrid for oversight.
+- **Framework:** Next.js (App Router)
+- **Styling Library:** Material UI (MUI)
+- **Authentication:** Auth.js v5 (NextAuth)
+- **Database/ORM:** PostgreSQL + Prisma
+- **Language:** TypeScript
 
-Compliance Tracking and Medical Reporting modules.
+## Live Demo
 
-Phase 4: Recovery Dashboard (Patient View)
-Daily Medication and Task Checklist.
+Live version: https://corepulse-dftd4i3bl-leenfanis-projects.vercel.app
 
-Conditional UI rendering based on specific diagnosis and care plans.
+## Local Setup
 
-Tech Stack
-Framework: Next.js (App Router)
-
-Styling Library: Material UI (MUI)
-
-State Management: Redux Toolkit
-
-Language: TypeScript
-
-Local Setup
-Clone the repository: git clone []
-
-Install dependencies: npm install
-
-Start the development server: npm run dev
+1. Clone the repository: `git clone []`
+2. Install dependencies: `npm install`
+3. Set up environment variables (`.env`) for database connection and Auth.js secrets.
+4. Run database migrations: `npx prisma migrate dev`
+5. Start the development server: `npm run dev`
