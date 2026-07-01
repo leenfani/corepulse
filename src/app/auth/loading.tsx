@@ -18,6 +18,12 @@ export default function Loading() {
           borderRadius: 20,
           height: "20rem",
           width: "55rem",
+          maxWidth: "100%",
+          m: "1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          px: 2,
         }}
       >
         <Typography
@@ -26,7 +32,6 @@ export default function Loading() {
           align="center"
           sx={{
             color: "primary.main",
-            lineHeight: "20rem",
           }}
         >
           Welcome To Our{" "}
