@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  PATIENT
+  NURSE
+}
+
+enum Gender {
+  FEMALE
+  MALE
+}
+
+enum Department {
+  GERIATRIC
+  PEDIATRIC
+  CARDIOLOGY
+  DERMATOLOGY
+  NEUROLOGY
+}
+
+model User {
+  id          String  @id @default(cuid())
+  name        String
+  age         Int
+  role        Role
+  department  Department
+  gender      Gender
+  dateOfBirth DateTime @map("date_of_birth")
+  createdAt   DateTime @default(now()) @map("created_at")
+  @@map("users")
+}
