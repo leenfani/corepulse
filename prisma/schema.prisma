@@ -27,6 +27,7 @@ enum Department {
 
 model User {
   id          String  @id @default(cuid())
+  medicalId   Int     @unique @map("medical_id")
   name        String
   age         Int
   role        Role
@@ -34,5 +35,31 @@ model User {
   gender      Gender
   dateOfBirth DateTime @map("date_of_birth")
   createdAt   DateTime @default(now()) @map("created_at")
+
+  patientMedications    Medication[] @relation("PatientMedications")
+  prescribedMedications Medication[] @relation("PrescribedMedications")
+
   @@map("users")
+}
+
+model Medication {
+  id           String   @id @default(cuid())
+  name         String
+  dosage       String
+  frequency    String
+  instructions String?
+  startDate    DateTime  @map("start_date")
+  endDate      DateTime? @map("end_date")
+  isActive     Boolean   @default(true) @map("is_active")
+
+  patientId    String   @map("patient_id")
+  patient      User     @relation("PatientMedications", fields: [patientId], references: [id])
+
+  nurseId      String   @map("nurse_id")
+  nurse        User     @relation("PrescribedMedications", fields: [nurseId], references: [id])
+
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("medications")
 }
