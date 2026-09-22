@@ -23,7 +23,7 @@ export default function Home() {
           <RoleSection {...RoleData} />
         </ScrollReveal>
       ))}
-      <HFooter/>
+      <HFooter />
     </Box>
   );
 }
