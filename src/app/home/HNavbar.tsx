@@ -11,7 +11,7 @@ export default function HNavbar() {
       }}
     >
       <Image
-        src="/icon/icon.jpg"
+        src="/icon.jpg"
         alt="Core Pulse Logo"
         width={70}
         height={70}
