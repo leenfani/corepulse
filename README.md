@@ -45,7 +45,6 @@ UI Consistency: A unified design system built exclusively with MUI for a profess
 ## Tech Stack
 - Framework: Next.js (App Router)
 - Styling Library: Material UI (MUI)
-- State Management: React Context + `useReducer`
 - Database: PostgreSQL with Prisma ORM
 - Authentication: Auth.js v5 (Credentials provider, JWT sessions)
 - Language: TypeScript
