@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 
-export default function Loading() {
+export default function WelcomScreen() {
   return (
     <Box
       sx={{
