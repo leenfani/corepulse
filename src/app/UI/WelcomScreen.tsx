@@ -1,6 +1,11 @@
 import { Box, Typography } from "@mui/material";
+import type { Role } from "@/generated/prisma/enums";
 
-export default function WelcomScreen() {
+interface WelcomScreenProps {
+  role: Role | string | null;
+}
+
+export default function WelcomScreen({ role }: WelcomScreenProps) {
   return (
     <Box
       sx={{
@@ -34,18 +39,20 @@ export default function WelcomScreen() {
             color: "primary.main",
           }}
         >
-          Welcome To Our{" "}
-          <Typography
-            component="span"
-            variant="inherit"
-            sx={{
-              fontFamily: "var(--kalam)",
-              verticalAlign: "baseline",
-              fontWeight: "bold",
-            }}
-          >
-            Bravest Fighter
-          </Typography>
+          <>
+            Welcome, our{" "}
+            <Typography
+              component="span"
+              variant="inherit"
+              sx={{
+                fontFamily: "var(--kalam)",
+                verticalAlign: "baseline",
+                fontWeight: "bold",
+              }}
+            >
+              {role === "NURSE" ? " White Coated Hero" : "Bravest Fighter"}
+            </Typography>
+          </>
         </Typography>
       </Box>
     </Box>

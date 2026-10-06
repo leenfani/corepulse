@@ -101,15 +101,17 @@ export default function HHero() {
                   monitor your status
                 </Button>
               </Link>
-              <Button
-                variant="outlined"
-                sx={{
-                  fontSize: { xs: "0.75rem", md: "1rem" },
-                  px: { xs: "10px", md: "30px" },
-                }}
-              >
-                monitor your patients
-              </Button>
+              <Link href="/auth">
+                <Button
+                  variant="outlined"
+                  sx={{
+                    fontSize: { xs: "0.75rem", md: "1rem" },
+                    px: { xs: "10px", md: "30px" },
+                  }}
+                >
+                  monitor your patients
+                </Button>
+              </Link>
             </Stack>
           </Grid>
         </Grid>
