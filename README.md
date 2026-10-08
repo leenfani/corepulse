@@ -28,13 +28,13 @@ UI Consistency: A unified design system built exclusively with MUI for a profess
 - Prisma schema and PostgreSQL setup (`User` and `Medication` models)
 - Database seeding with demo nurse and patient accounts
 
-### Phase 2: Authentication and Authorization — In Progress
+### Phase 2: Authentication and Authorization — Complete
 - Auth.js v5 Credentials provider with hashed password verification
 - JWT session strategy
 - Login page
-- Role-based route protection via middleware (next up)
+- Role-based route protection via middleware 
 
-### Phase 3: Clinical Dashboard (Nurse View)
+### Phase 3: Clinical Dashboard (Nurse View) - In Progress
 - Patient Monitoring DataGrid for oversight
 - Compliance Tracking and Medical Reporting modules
 
