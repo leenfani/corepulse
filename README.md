@@ -38,7 +38,7 @@ UI Consistency: A unified design system built exclusively with MUI for a profess
 - Patient Monitoring DataGrid for oversight
 - Compliance Tracking and Medical Reporting modules
 
-### Phase 4: Recovery Dashboard (Patient View)
+### Phase 4: Recovery Dashboard (Patient View) - In Progress
 - Daily Medication and Task Checklist
 - Conditional UI rendering based on active medications and care plans
 
