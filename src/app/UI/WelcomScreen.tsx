@@ -1,11 +1,22 @@
+"use client";
 import { Box, Typography } from "@mui/material";
 import type { Role } from "@/generated/prisma/enums";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface WelcomScreenProps {
   role: Role | string | null;
 }
 
 export default function WelcomScreen({ role }: WelcomScreenProps) {
+  const router = useRouter();
+  const destination =
+    role === "NURSE" ? "/nurseDashboard" : "/patientDashboard";
+
+  useEffect(() => {
+    const timer = setTimeout(() => router.replace(destination), 2500);
+    return () => clearTimeout(timer);
+  }, [destination, router]);
   return (
     <Box
       sx={{
